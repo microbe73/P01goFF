@@ -1,2 +1,6 @@
-ishraqM -- 2021-12-7 23:14
-Initialized devlog.txt and flag.jpg
+ishraqM -- 2021-12-07 23:14
+- Initialized devlog.txt and flag.jpg
+
+angelaZ -- 2021-12-09 00:36
+- Added description to README.md
+- Pushed design.pdf (first version)
