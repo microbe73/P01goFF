@@ -11,3 +11,5 @@ Added description to README.md.
 Added heading to devlog.
 Pushed design.pdf (first version).
 
+RayatR -- 2021-12-10 07:00
+Updated design doc with new revisions. Task list and division of labor initialized. Table clarity improved. Other minor improvements reguarding revision made.
