@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+# goFF -- Israq Mahid, Angela Zhang, Michelle Lo, Rayat Roy
+# SoftDev
+# PO1 -- goFF's registration page
+# 2021-12-07
+ -->
+
+ <html>
+
+  <head>
+    <title> REGISTRATION PAGE </title>
+  </head>
+
+  <body>
+    <center>
+      <h1>
+        Welcome to goFindFriends! 
+        <br>
+        We are Team goFF, the creators of goFindFriends! -- Angela Zhang, Rayat Roy, Michelle Lo, Israq Mahid
+      </h1>
+      <br>
+      <h2>
+        Enter a new username and password to proceed.
+      </h2>
+      <h3 style="color:red;">
+        {{error}} <!-- If there is no error (initial start and logging out), this is empty --> <br>
+      </h3>
+      <form action="/create" method = "post"> <!-- same pathway as authenticate() -->
+        Username: <input type="text" name="username"> <br>
+        Password: <input type="password" name="password"> <br> 
+        Confirm Password: <input type="password" name="c_password"> 
+        <br><br>
+      <input type="submit" name="sub1"> <!-- used for response page to load -->
+      <br><br>
+      <input formaction = "/login" type="submit" value="Login Instead">
+      </form>
+    </center>
+  </body>
