@@ -65,11 +65,19 @@ def welcome():
     '''
 
     if userSignedIn(session):
-        return render_template("home_Page.html", user=session['username'])
+        return render_template("home_page.html", user=session['username'])
 
     else:
-        return render_template('login_Page.html')
+        #fill in with watever we want later
+        return render_template('login.html')
 
+@app.route("/login", methods = ['GET','POST'])
+def login():
+    '''login page'''
+    if userSignedIn(session):
+        return unauthorizedFlow()
+    
+    return render_template("login.html")
 
 @app.route("/register", methods=['GET', 'POST'])
 def disp_registerpage():
@@ -107,7 +115,7 @@ def check_register():
 
     if password_requirements and (not username_conflict):
         add_user(username, password)
-        return render_template('login_Page.html', extra_Message="Successfully Registered")
+        return render_template('login_page.html', error="Successfully Registered")
 
     else:
         #Error messages based on incorrect input types
@@ -118,7 +126,7 @@ def check_register():
         elif username_conflict:
             extra_Message = "Username may already be in use, or does not contain at least one character"
 
-        return render_template('register.html', extra_Message=extra_Message)
+        return render_template('register.html', error=extra_Message)
 
 
 @app.route("/logout", methods=['GET', 'POST'])
@@ -128,7 +136,7 @@ def logout():
     '''
 
     session['username'] = None
-    return render_template('login_Page.html', extra_Message="Successfully Logged Out")
+    return render_template('login_page.html', error="Successfully Logged Out")
 
 
 @app.route("/auth_ed", methods=['POST'])
@@ -148,4 +156,20 @@ def authenticate():
         session['username'] = username
         return redirect("/", code=302)
     else:
-        return render_template('login_Page.html', extra_Message="Login failed, please try again")
+        return render_template('login_page.html', error="Login failed, please try again")
+
+
+def main():
+    """
+    false if this file imported as module
+    debugging enabled
+    """
+    try:
+        app.debug = True
+        app.run()
+    except:
+        return render_template('ErrorResponse.html')
+
+
+if __name__ == "__main__":
+    main()
