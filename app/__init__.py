@@ -1,6 +1,7 @@
 from flask import session
 from flask import request, render_template, Flask, redirect
 from os import urandom
+from data.user_management import *
 
 app = Flask(__name__)
 debug = True
@@ -11,34 +12,6 @@ app.secret_key = urandom(24)
 ###NOTE: FOR THE FUNCTIONS user_exists(user), correct_password(user,password), and add_user(user,password):
 ###THESE FUNCTIONS WERE ADDED HERE TO LET THE CODE COMPILE. THESE METHODS SHOULD COME FROM A SEPERATE DATABASE MANAGEMENT PY FILE
 ###FOR SAKE OF ORGANIZATION.
-
-def user_exists(user):
-    '''returns boolean depending on whether or not the given user exists'''
-
-    #currently only returns True
-    return True
-
-    #how to implement:
-    #have a database function that checks to see if given user exists within the db and return boolean based on that
-
-def correct_password(user,password):
-    '''returns boolean if username and password combination are valid'''
-
-    #currently only returns True
-    return True
-
-    #how to implement:
-    #have a databsase function that checks to see if the username and password combination is valid and returns a boolean in response
-    #True if valid; False if invalid
-
-def add_user(user,password):
-    '''adds user given username and password combination'''
-
-    #currently does nothing
-    print("user should be added at this point")
-
-    #how to implement:
-    #have a database function that... adds the user and password combo to the database
 
 def unauthorizedFlow():
     '''

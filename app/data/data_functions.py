@@ -57,3 +57,9 @@ def create_profile(name, bio, pic):
     c = db.cursor()
     c.execute(f'INSERT INTO profiles (name, bio, pic) VALUES (?, ?, ?);', (name, bio, pic))
     db.commit()
+
+def init():
+    print("initialize the database and whatever else here")
+
+if __name__ == "__main__":
+    init()
