@@ -22,3 +22,6 @@ Added a few basic functions to the database: Creating/authenticating users, crea
 
 AngelaZ -- 2021-12-13 08:26
 Created index.html and cleaned up both login.html and register.html.
+
+IshraqM -- 2021-12-13 08:29
+Looking at code and cleaning like a janitor.
