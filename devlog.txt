@@ -14,5 +14,8 @@ Pushed design.pdf (first version).
 RayatR -- 2021-12-10 07:00
 Updated design doc with new revisions. Task list and division of labor initialized. Table clarity improved. Other minor improvements reguarding revision made.
 
+IshraqM -- 2021-12-12 13:00
+Created skeleton login and register page
+
 RayatR -- 2021-12-12 11:55
 Added a few basic functions to the database: Creating/authenticating users, creating profiles, generating the tables, and returning profile info
