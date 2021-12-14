@@ -17,7 +17,7 @@ Updated design doc with new revisions. Task list and division of labor initializ
 IshraqM -- 2021-12-12 13:00
 Created skeleton login and register page.
 
-RayatR -- 2021-12-12 11:55
+RayatR -- 2021-12-12 23:55
 Added a few basic functions to the database: Creating/authenticating users, creating profiles, generating the tables, and returning profile info
 
 AngelaZ -- 2021-12-13 08:26
@@ -25,3 +25,6 @@ Created index.html and cleaned up both login.html and register.html.
 
 IshraqM -- 2021-12-13 08:29
 Looking at code and cleaning like a janitor.
+
+RayatR -- 2021-12-13 19:45
+Adding various database functions, such as returning usernames, adding friends, and getting friends. Improved user login by checking for duplicate names.
