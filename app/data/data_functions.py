@@ -1,4 +1,5 @@
 #Users refer to the actual person using website, profiles refer to the randomly generated fake accounts that we make
+import sqlite3
 DB_FILE='database.db'
 db = sqlite3.connect(DB_FILE, check_same_thread=False)
 
@@ -28,7 +29,7 @@ def get_friends_of_user(user_id):
 
 def set_friendship(friendshiplvl, user_id, profile_id):
     #this will allow us to change friendship level
-    
+    print('just need indent block so python happy')
 
 def befriend(user_id, profile_id):
     c = db.cursor()
@@ -45,6 +46,7 @@ def get_usernames():
     for i in range(rows):
         usernames.append(get_username_from_id(i))
     return usernames
+
 def get_username_from_id(user_id):
     """returns the username given the user id"""
     c = db.cursor()
@@ -62,12 +64,13 @@ def create_user(username, password):
     c.execute(f'INSERT INTO users (username, password) VALUES (?, ?);', (username, password)) 
     db.commit()
     return True
+
 def authenticate(username, password):
     """Checks if the username and password match any login info in the users table"""
     c = db.cursor()
     result = list(c.execute(f'SELECT user_id from users where username == ? and password == ?', (username, password)))
     if(len(result) == 0): #length 0 means that password/username combination had no match
-        return None
+        return -1 #Can check in __init__ if the function returns -1
     
     return result[0][0] #user_id
 
