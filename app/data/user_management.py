@@ -1,5 +1,4 @@
-from data_functions import *
-
+from data.data_functions import * 
 def user_exists(user):
     '''returns boolean depending on whether or not the given user exists'''
 

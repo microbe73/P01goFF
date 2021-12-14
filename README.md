@@ -42,7 +42,7 @@ Create a virtual environment (unless you already have one):
     <br>
     To then install the required packages, navigate to this repository, and enter in the following with the virtual environment activated:
     ```
-    pip install -r requirements.txt
+    pip3 install -r requirements.txt
     ```
     
 Opening goFindFriends:
