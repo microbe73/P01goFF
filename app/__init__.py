@@ -44,6 +44,7 @@ def welcome():
         #fill in with watever we want later
         return render_template('index.html')
 
+
 @app.route("/login", methods = ['GET','POST'])
 def login():
     '''login page'''
@@ -64,6 +65,7 @@ def login():
             return render_template('login.html', error="Login failed, please try again")
 
     return render_template("login.html")
+
 
 @app.route("/register", methods=['GET', 'POST'])
 def disp_registerpage():
