@@ -59,7 +59,7 @@ def create_user(username, password):
     """Adds a user with a username and password into the users table of the database"""
     c = db.cursor()
     #check if the username is already taken
-    usernames = get_usernames
+    usernames = get_usernames()
     for name in usernames:
         if(username == name):
             return False

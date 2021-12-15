@@ -50,10 +50,9 @@ def login():
     if userSignedIn(session):
         return unauthorizedFlow()
     
-    if 'username' in request.form.keys():
+    if 'username' in request.form.keys() and request.form.get('username') != "":
         username = request.form.get('username')
         password = request.form.get('password')
-
         #authflow variable
         loginAuthorized = user_exists(
             username) and correct_password(username, password)
@@ -72,7 +71,37 @@ def disp_registerpage():
     register page
     '''
     if userSignedIn(session):
-        return unauthorizedFlow()
+        return redirect("/unauthorized.html", code=302)
+
+    if 'username' in request.form.keys() and request.form.get('username') != "":
+        #store form information
+        username = request.form.get('username')
+        password = request.form.get('password')
+        con_password = request.form.get('c_password')
+
+        #checks password requirements against password confirmation and password existence; False means it fails requirements
+        password_requirements = password == con_password and bool(password)
+
+        #checks db for existing user and user existence; False means it passes requirements
+        username_conflict = user_exists(username) or (not bool(username))
+
+        if password_requirements and (not username_conflict):
+            add_user(username, password)
+            return redirect("/login")
+
+        else:
+            #Error messages based on incorrect input types
+            extra_Message = "An error has been made trying to register you."
+            if not password_requirements:
+                extra_Message = "Password requirements not met. Check to see that password is at least one character and that password confirmation matches"
+                print(username)
+                print(password)
+                print(con_password)
+
+            elif username_conflict:
+                extra_Message = "Username may already be in use, or does not contain at least one character"
+
+            return render_template('register.html', error=extra_Message)
 
     return render_template('register.html')
 
