@@ -1,7 +1,7 @@
 #Users refer to the actual person using website, profiles refer to the randomly generated fake accounts that we make
 import sqlite3
 DB_FILE='database.db'
-db = sqlite3.connect(DB_FILE, check_same_thread=False)
+db = sqlite3.connect(DB_FILE, isolation_level=None, check_same_thread=False)
 
 #General functions
 def create_tables():
@@ -52,6 +52,7 @@ def get_username_from_id(user_id):
     c = db.cursor()
     result = list(c.execute(f'SELECT username from users where user_id == ?', (user_id, )))[0][0]
     return result
+
 def create_user(username, password):
     """Adds a user with a username and password into the users table of the database"""
     c = db.cursor()
@@ -87,7 +88,11 @@ def getProfile(profile_id):
         "bio": bio,
         "pic": pic
     } for (profile_id, name, bio, pic) in result][0]
+
 def create_profile(name, bio, pic):
     c = db.cursor()
     c.execute(f'INSERT INTO profiles (name, bio, pic) VALUES (?, ?, ?);', (name, bio, pic))
     db.commit()
+
+if __name__ == "__main__":
+    create_tables()

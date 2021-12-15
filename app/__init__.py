@@ -50,6 +50,20 @@ def login():
     if userSignedIn(session):
         return unauthorizedFlow()
     
+    if 'username' in request.form.keys():
+        username = request.form.get('username')
+        password = request.form.get('password')
+
+        #authflow variable
+        loginAuthorized = user_exists(
+            username) and correct_password(username, password)
+
+        if loginAuthorized:
+            session['username'] = username
+            return redirect("/", code=302)
+        else:
+            return render_template('login.html', error="Login failed, please try again")
+
     return render_template("login.html")
 
 @app.route("/register", methods=['GET', 'POST'])
