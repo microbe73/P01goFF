@@ -42,7 +42,7 @@ def welcome():
 
     else:
         #fill in with watever we want later
-        return render_template('login.html')
+        return render_template('index.html')
 
 @app.route("/login", methods = ['GET','POST'])
 def login():

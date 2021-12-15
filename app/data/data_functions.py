@@ -13,7 +13,7 @@ def create_tables():
     command = 'CREATE TABLE IF NOT EXISTS profiles (profile_id INTEGER PRIMARY KEY, name TEXT NOT NULL, bio TEXT NOT NULL, pic TEXT NOT NULL)' #creates profiles table
     #stores the profile id, profile name, profile bio, and link to a profile picture
     c.execute(command)
-    command = 'CREATE TABLE IF NOT EXISTS friends (user_id INTEGER PRIMARY KEY, profile_id INTEGER friendship INTEGER)' #creates a connecting table
+    command = 'CREATE TABLE IF NOT EXISTS friends (user_id INTEGER, profile_id INTEGER friendship INTEGER)' #creates a connecting table
     #Stores a user id and profile id. If a user adds a profile as a friend, a new entry is added to this table with the ids of the user and the profile
     #The friendship value stores how friendly the user and the profile are
     #ok so my very inefficient plan with the friends table is when we need to change something we look at all of a users friended profiles until we find the one with the right id
@@ -22,14 +22,16 @@ def create_tables():
 
 def get_friends_of_user(user_id):
     c = db.cursor()
-    result = list(c.execute(f'select profile_id from friends where user_id == ? order by profile_id ', (user_id)))
+    result = list(c.execute(f'select profile_id from friends where user_id == ?', (user_id)))
     return [{
         "profile_id": profile_id,
     } for (profile_id) in result]
 
 def set_friendship(friendshiplvl, user_id, profile_id):
     #this will allow us to change friendship level
-    print('just need indent block so python happy')
+    c = db.cursor()
+    c.execute(f'UPDATE entries SET friendship = ? where user_id == ?, profile_id == ?', (friendship, user_id, profile_id))
+    db.commit()
 
 def befriend(user_id, profile_id):
     c = db.cursor()
