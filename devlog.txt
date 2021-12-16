@@ -28,3 +28,9 @@ Looking at code and cleaning like a janitor.
 
 RayatR -- 2021-12-13 19:45
 Adding various database functions, such as returning usernames, adding friends, and getting friends. Improved user login by checking for duplicate names.
+
+MichelleL -- 2021-12-15 21:02
+Added api_functions, which contains functions that will be used when handling our program's APIs. Accounted for kanye and anime quotes, and a bit of random user API.
+
+MichelleL -- 2021-12-15 21:15
+Added profile class which will generate a profile with randomly generated attributes (quote and name).

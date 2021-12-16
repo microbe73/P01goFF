@@ -52,8 +52,9 @@ def get_usernames():
 def get_username_from_id(user_id):
     """returns the username given the user id"""
     c = db.cursor()
-    result = list(c.execute(f'SELECT username from users where user_id == ?', (user_id, )))[0][0]
-    return result
+    result = c.execute(f"SELECT username from users where user_id == ? {user_id}")
+    print (result.fetchone())
+    return result.fetchone()
 
 def create_user(username, password):
     """Adds a user with a username and password into the users table of the database"""
