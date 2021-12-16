@@ -2,6 +2,7 @@ from flask import session
 from flask import request, render_template, Flask, redirect
 from os import urandom
 from data.user_management import *
+from data.profile import Profile
 
 app = Flask(__name__)
 debug = True
@@ -50,7 +51,7 @@ def login():
     '''login page'''
     if userSignedIn(session):
         return unauthorizedFlow()
-    
+
     if 'username' in request.form.keys() and request.form.get('username') != "":
         username = request.form.get('username')
         password = request.form.get('password')
@@ -176,6 +177,17 @@ def authenticate():
     else:
         return render_template('login_page.html', error="Login failed, please try again")
 
+@app.route("/dashboard", methods=['GET', 'POST'])
+# TESTER CODE. FINAL PRODUCT MAY VARY DUE TO PRODUCT ENHANCEMENT.
+def dashboard():
+    p1 = Profile()
+    print("seed: " + p1.get_profileURL())
+    print("full name: " + p1.get_fullname())
+    print("kanye quote: " + p1.get_kanyequote())
+    print("anime quote: " + p1.get_animequote())
+    print("char for quote: " + p1.get_animechar())
+    print("anime for quote: " + p1.get_anime())
+    return render_template('index.html') #switch out
 
 def main():
     """
