@@ -28,3 +28,9 @@ class Profile :
     def get_anime(self):
         anime = self.animedata.get('anime')
         return anime
+
+    def get_picture(self):
+        return get_picture(self.profileURL)
+
+    def get_age(self):
+        return get_age(self.profileURL)

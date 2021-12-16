@@ -183,6 +183,8 @@ def dashboard():
     p1 = Profile()
     print("seed: " + p1.get_profileURL())
     print("full name: " + p1.get_fullname())
+    print("picture: " + p1.get_picture())
+    print("age: " + str(p1.get_age()))
     print("kanye quote: " + p1.get_kanyequote())
     print("anime quote: " + p1.get_animequote())
     print("char for quote: " + p1.get_animechar())
