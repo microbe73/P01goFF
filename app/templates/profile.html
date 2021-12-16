@@ -26,7 +26,9 @@
                 </h3>
 
                 <list>
-                    
+                    {% for item in character.likes %}
+                        <li>{{item}}</li>
+                    {% end for %}
                 </list>
 
                 <h3>
@@ -34,7 +36,9 @@
                 </h3>
 
                 <list>
-                    
+                    {% for item in character.dislikes %}
+                        <li>{{item}}</li>
+                    {% end for %}
                 </list>
             </div>
             
