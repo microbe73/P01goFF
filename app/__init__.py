@@ -211,9 +211,7 @@ def profile():
         "dislikes":["nofood","nogames","nochips"]
     }
 
-    return render_template("profile.html",name=character["name"],
-    age=character["age"],pfp=character["pfp"],song_name=character["song"]["name"],
-    song_genre = character["song"]["genre"],likes=character["likes"],dislikes=character["dislikes"])
+    return render_template("profile.html", character=character)
 
 if __name__ == "__main__":
     main()
