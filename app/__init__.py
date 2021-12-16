@@ -1,7 +1,7 @@
 from flask import session
 from flask import request, render_template, Flask, redirect
 from os import urandom
-from data.user_management import *
+from data.data_functions_v2 import *
 from data.profile import Profile
 
 app = Flask(__name__)

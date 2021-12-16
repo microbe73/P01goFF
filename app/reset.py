@@ -1,3 +1,3 @@
-from data.data_functions import create_tables
+from data.data_functions_v2 import reset_data
 
-create_tables()
+reset_data()
