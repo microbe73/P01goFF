@@ -34,3 +34,6 @@ Added api_functions, which contains functions that will be used when handling ou
 
 MichelleL -- 2021-12-15 21:15
 Added profile class which will generate a profile with randomly generated attributes (quote and name).
+
+IshraqM -- 2021-12-15 23:06
+Fixing up profile template and figuring out db + login jazz

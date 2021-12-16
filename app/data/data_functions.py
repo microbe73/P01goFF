@@ -30,7 +30,7 @@ def get_friends_of_user(user_id):
 def set_friendship(friendshiplvl, user_id, profile_id):
     #this will allow us to change friendship level
     c = db.cursor()
-    c.execute(f'UPDATE entries SET friendship = ? where user_id == ?, profile_id == ?', (friendship, user_id, profile_id))
+    c.execute(f'UPDATE entries SET friendship = ? where user_id == ?, profile_id == ?', (friendshiplvl, user_id, profile_id))
     db.commit()
 
 def befriend(user_id, profile_id):
