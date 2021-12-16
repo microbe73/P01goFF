@@ -62,3 +62,17 @@ def get_fullname(seed):
     # print(lastname)
     # print(fullname)
     return fullname
+
+def get_picture(seed):
+    ''' get_picture() will generate a picture (link) based on a profile '''
+    data = parseURL(seed)
+    info = data.get('results')[0]
+    pic = info.get('picture').get('medium')
+    return pic
+
+def get_age(seed):
+    ''' get_picture() will generate a age based on a profile '''
+    data = parseURL(seed)
+    info = data.get('results')[0]
+    age = info.get('dob').get('age')
+    return age

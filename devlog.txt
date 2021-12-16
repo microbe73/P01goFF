@@ -37,3 +37,6 @@ Added profile class which will generate a profile with randomly generated attrib
 
 IshraqM -- 2021-12-15 23:06
 Fixing up profile template and figuring out db + login jazz
+
+MichelleL -- 2021-12-16 08:27
+Finished with user generator API.
