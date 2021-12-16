@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>{{character.name}}'s Profile</title>
+        <title>{{name}}'s Profile</title>
     </head>
 
     <body>
         <h1>
-            {{character.name}}'s Profile
+            {{name}}'s Profile
         </h1>
 
-        <img src = "{{character.pfp}}">
+        <img src = "{{pfp}}">
 
         <div>
             <h2>About me!</h2>
             <p>
-                Hi, my name is {{character.name}} and I'm {{charcter.age}}. There's a couple of things I like and don't like, but I hope we can be friends!
+                Hi, my name is {{name}} and I'm {{age}}. There's a couple of things I like and don't like, but I hope we can be friends!
             </p>
             <br>
 
-            <p>My favorite song is {{charcter.song.name}. It's {{character.song.genre}} song that I really enjoy!</p>
+            <p>My favorite song is {{song_name}}. It's {{song_genre}} song that I really enjoy!</p>
 
             <div>
                 <h3>
@@ -26,9 +26,9 @@
                 </h3>
 
                 <list>
-                    {% for item in character.likes %}
+                    {% for item in likes %}
                         <li>{{item}}</li>
-                    {% end for %}
+                    {% endfor %}
                 </list>
 
                 <h3>
@@ -36,9 +36,9 @@
                 </h3>
 
                 <list>
-                    {% for item in character.likes %}
+                    {% for item in dislikes %}
                         <li>{{item}}</li>
-                    {% end for %}
+                    {% endfor %}
                 </list>
             </div>
             

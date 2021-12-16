@@ -200,6 +200,20 @@ def main():
     except:
         return render_template('ErrorResponse.html')
 
+@app.route("/template_test", methods = ['GET','POST'])
+def profile():
+    character = {
+        "name" : "Fish",
+        "age":-10,
+        "pfp": "https://cdn.britannica.com/83/89183-050-D00C8FDC/Scup-porgy.jpg",
+        "song":{"genre":"rock", "name":"livin on a prayer"},
+        "likes":["food","games","chips"],
+        "dislikes":["nofood","nogames","nochips"]
+    }
+
+    return render_template("profile.html",name=character["name"],
+    age=character["age"],pfp=character["pfp"],song_name=character["song"]["name"],
+    song_genre = character["song"]["genre"],likes=character["likes"],dislikes=character["dislikes"])
 
 if __name__ == "__main__":
     main()
