@@ -9,8 +9,16 @@
         
     </head>
     <body>
+        <h1>
+            Welcome {{user}}
+        </h1>
+
+        <form>
+            <input formaction="/logout" type="submit" value="Logout">
+        </form>
+
         <p>
-            {{user}}
+            Hello {{user}}! Check <a href="/template_test">this</a> out!
         </p>
     </body>
     

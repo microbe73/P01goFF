@@ -155,7 +155,7 @@ def logout():
     '''
 
     session['username'] = None
-    return render_template('login_page.html', error="Successfully Logged Out")
+    return render_template('login.html', error="Successfully Logged Out")
 
 
 @app.route("/auth_ed", methods=['POST'])
