@@ -43,3 +43,6 @@ Finished with user generator API.
 
 IshraqM -- 2021-12-16 8:40
 Profile template is functionally and currently up for testing. Database reworked and is currently capable of allowing login and reigster functions to work.
+
+IshraqM -- 2021-12-17 8:42
+Worked on getting profiles table working with db.
