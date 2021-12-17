@@ -22,7 +22,6 @@ Prerequisites:
     <br>
     In the directory you want to have the code in, type into a terminal
     <br>
-    
     ```
     $ git clone git@github.com:microbe73/P01goFF.git
     ```
