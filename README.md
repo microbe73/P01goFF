@@ -18,16 +18,16 @@ So rely on us.
 Prerequisites:
     Python 3 is installed and necessary environment variables are setup properly.
 
-Clone repo:
+1: Clone repo:
     <br>
     In the directory you want to have the code in, type into a terminal
     <br>
-    1: 
+    
     ```
     $ git clone git@github.com:microbe73/P01goFF.git
     ```
-    
-Create a virtual environment (unless you already have one):
+    <br>
+2: Create a virtual environment (unless you already have one):
     <br>
     A virtual environment can be created using the following line in a terminal 
     <br>
@@ -45,14 +45,14 @@ Create a virtual environment (unless you already have one):
     ```
     pip3 install -r requirements.txt
     ```
-    
-Opening goFindFriends:
+    <br>
+3: Opening goFindFriends:
     <br>
     cd into the goFF repo
     <br>
     Then cd again to app 
-    
-Running code:
+    <br>
+4: Running code:
     <br>
     Once you are in the app directory, which contains ```__init__.py```, type the following line into a terminal
     <br>
