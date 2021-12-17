@@ -22,6 +22,7 @@ Clone repo:
     <br>
     In the directory you want to have the code in, type into a terminal
     <br>
+    1: 
     ```
     $ git clone git@github.com:microbe73/P01goFF.git
     ```
