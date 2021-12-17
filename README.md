@@ -46,8 +46,6 @@ Prerequisites:
     ```
     pip3 install -r requirements.txt
     ```
-    <br>
-    <br>
 3: Opening goFindFriends:
     <br>
     cd into the goFF repo
