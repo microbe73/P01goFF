@@ -25,7 +25,8 @@ Prerequisites:
     ```
     $ git clone git@github.com:microbe73/P01goFF.git
     ```
-
+    <br>
+    <br>
 2: Create a virtual environment (unless you already have one):
     <br>
     A virtual environment can be created using the following line in a terminal 
