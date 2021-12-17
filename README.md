@@ -26,7 +26,8 @@ Prerequisites:
     ```
     $ git clone git@github.com:microbe73/P01goFF.git
     ```
-<br>
+    <br>
+    <br>
 2: Create a virtual environment (unless you already have one):
     <br>
     A virtual environment can be created using the following line in a terminal 
@@ -45,12 +46,14 @@ Prerequisites:
     ```
     pip3 install -r requirements.txt
     ```
-<br>
+    <br>
+    <br>
 3: Opening goFindFriends:
     <br>
     cd into the goFF repo
     <br>
     Then cd again to app 
+    <br>
     <br>
 4: Running code:
     <br>
