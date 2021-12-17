@@ -30,21 +30,21 @@ Prerequisites:
     <br>
 2: Create a virtual environment (unless you already have one):
     <br>
-    A virtual environment can be created using the following line in a terminal 
+    a: A virtual environment can be created using the following line in a terminal 
     <br>
     ```
     $ python3 -m venv ~/path/to/virtual/environment/directory
     ```
     <br>
     <br>
-    The virtual environment can then be activated by being in the right directory, then typing the following line in a terminal
+    b: The virtual environment can then be activated by being in the right directory, then typing the following line in a terminal
     <br>
     ```
     $ source (name of virtual environment directory)/bin/activate
     ```
     <br>
     <br>
-    To then install the required packages, navigate to this repository, and enter in the following with the virtual environment activated:
+    c: To then install the required packages, navigate to this repository, and enter in the following with the virtual environment activated:
     ```
     pip3 install -r requirements.txt
     ```
