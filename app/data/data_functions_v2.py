@@ -2,8 +2,13 @@ from sqlite3 import connect
 from data.table import Table
 
 data = connect("data.db", isolation_level=None, check_same_thread=False)
+#"username", "password"
 users = Table(data, "users", "username")
 
+#"name", "pfp", "age", "bio", "song", "quote", "gender"
+profiles = Table(data, "profiles", "name")
+
+#management for users table
 def get_usernames():
     "retuns a list of usernames"
     return users.get_main_values()
@@ -26,11 +31,36 @@ def add_user(username, password):
     edited_stories = Table(data, username, "title")
     edited_stories.create(["title"])
 
+#management for profiles table
+
+def get_profiles():
+    "returns a list of profiles"
+    return profiles.get_main_values()
+
+def profile_exists(name):
+    "returns true if profile with name exists"
+    return profiles.value_exists()
+
+def add_profile(name, pfp, age, bio, song, quote, gender):
+    "adds a profile 'name' with desired parameters; throws error if conflicts with existing profile"
+    if(not profile_exists(name)):
+        profiles.add_values([name, pfp, age, bio, song, quote, gender])
+    else:
+        raise ValueError("the given profile already exists")
+
+def get_profile_value(name, field):
+    "gets desired field of the profile with name; throws error if profile with name does not exist"
+    if(not profile_exists(name)):
+        raise KeyError("the given profile cannot be found")
+    else:
+        return profiles.get_value(name,field)
 
 def reset_data():
     "resets the database to empty user and story tables"
     open("data.db", "w").close()
     users.create(["username", "password"])
+    profiles.create(["name", "pfp", "age", "bio", "song", "quote", "gender"])
+
 
 
 ###THE BELOW CODE IS FROM WHEN theonionsone WORKED ON THE STORY IMPROV PROJECT
