@@ -39,14 +39,14 @@ def get_profiles():
 
 def profile_exists(name):
     "returns true if profile with name exists"
-    return profiles.value_exists()
+    return profiles.value_exists(name)
 
 def add_profile(name, pfp, age, bio, song, quote, gender):
     "adds a profile 'name' with desired parameters; throws error if conflicts with existing profile"
     if(not profile_exists(name)):
         profiles.add_values([name, pfp, age, bio, song, quote, gender])
-    else:
-        raise ValueError("the given profile already exists")
+        return True
+    return False
 
 def get_profile_value(name, field):
     "gets desired field of the profile with name; throws error if profile with name does not exist"
