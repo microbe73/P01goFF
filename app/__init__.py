@@ -204,10 +204,11 @@ def main():
 
 @app.route("/template_test", methods = ['GET','POST'])
 def profile():
+    char1 = Profile()
     character = {
-        "name" : "Fish",
-        "age":-10,
-        "pfp": "https://cdn.britannica.com/83/89183-050-D00C8FDC/Scup-porgy.jpg",
+        "name" : char1.get_fullname(),
+        "age": char1.get_age(),
+        "pfp": char1.get_picture(),
         "song":{"genre":"rock", "name":"livin on a prayer"},
         "likes":["food","games","chips"],
         "dislikes":["nofood","nogames","nochips"]
