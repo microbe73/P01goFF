@@ -49,3 +49,6 @@ Worked on getting profiles table working with db.
 
 IshraqM -- 2021-12-20 8:41
 Started working on API functions
+
+IshraqM -- 2021-12-21 8:41
+Finished work on API functions and implemented error handling for API use.
