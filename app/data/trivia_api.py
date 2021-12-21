@@ -13,11 +13,40 @@ def parseURL(url):
 
 #args must be an integer
 def getTrivDict(arg):
-    '''takes parameter arg, which gets concatenated to the url request
+    '''takes parameter arg, an int, which gets concatenated to the url request
     returns trivia api dicitonary, where amount=10 and category=args'''
-    
+
     url = "https://opentdb.com/api.php?amount=10&type=boolean&category="+str(arg)
 
     return parseURL(url)
+def getTrivHuman(arg):
+    '''takes parameter arg, a string, which accesses getTrivDict using dictionary
+    indexing to proper numberal representation of the category'''
 
-print(getTrivDict(9))
+    categories = {
+        "everything":0,
+        "general":9,
+        "film":11,
+        "music":12,
+        "tv":14,
+        "games":15,
+        "science":17,
+        "tech":18,
+        "math":19,
+        "myths":20,
+        "sports":21,
+        "geography":22,
+        "history":23,
+        "politics":24,
+        "animals":27,
+        "vehicles":28,
+        "anime":31
+    }
+
+    return getTrivDict(categories[arg])
+
+if __name__ == "__main__":
+    x = getTrivHuman("everything")['results']
+
+    for list in x:
+        print(list)

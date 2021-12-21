@@ -46,3 +46,6 @@ Profile template is functionally and currently up for testing. Database reworked
 
 IshraqM -- 2021-12-17 8:42
 Worked on getting profiles table working with db.
+
+IshraqM -- 2021-12-20 8:41
+Started working on API functions
