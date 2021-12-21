@@ -42,11 +42,17 @@ def getTrivHuman(arg):
         "vehicles":28,
         "anime":31
     }
-
-    return getTrivDict(categories[arg])
+    information = getTrivDict(categories[arg])
+    try:
+        if information['response_code'] == 0:
+            return information['results']
+        else:
+            return False
+    except:
+        return False
 
 if __name__ == "__main__":
-    x = getTrivHuman("everything")['results']
+    x = getTrivHuman("everything")
 
     for list in x:
         print(list)

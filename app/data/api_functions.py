@@ -6,9 +6,12 @@ import json, urllib
 def parseURL(url):
     ''' parseURL() will open, read, and turn the given url into a dictionary '''
     req = Request(url, headers={'User-Agent': 'Mozilla/5.0'}) #establishes a useragent so we don't look like a bot
-    page = urlopen(req)
-    dict = json.loads(page.read())
-    return dict
+    try:
+        page = urlopen(req)
+        dict = json.loads(page.read())
+        return dict
+    except:
+        return False
 
 # functions related to the animequote api
 def get_animedata():
