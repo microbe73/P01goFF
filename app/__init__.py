@@ -215,6 +215,17 @@ def profile():
     }
 
     return render_template("profile.html", character=character)
+@app.route("/game", methods = ['GET', 'POST'])
+def game():
+    question = "True or false: Does 1+1=2?"
+    correct = "True" #true if the correct answer is true, false if the correct answer is false
+    answer = request.form.get("answer")
+    if(answer == None):
+        return render_template("trivia.html", question=question, msg = "")
+    if(str.lower(correct) == str.lower(str(answer))):
+        return render_template("trivia.html", question=question, msg="correct!")
+    else:
+        return render_template("trivia.html", question=question, msg="incorrect")
 
 if __name__ == "__main__":
     main()

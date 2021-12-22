@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!--
+# goFF -- Israq Mahid, Angela Zhang, Michelle Lo, Rayat Roy
+# SoftDev
+# PO1 -- goFF's trivia page
+# 2021-12-07
+ -->
+
+ <html>
+ 	<title>
+ 		Do you want to play a game?
+ 	</title>
+ 	<body>
+       {{question}}
+       <form action="/game" method = "POST"> <!-- same pathway as authenticate() -->
+         Answer: <input type="text" name="answer"> <br>
+        <input type="submit" name="sub1"> <!-- used for response page to load -->
+        <br><br>
+      </form>
+       <br>
+       <br>
+       {{msg}}
+ 	</body>
+</html>
