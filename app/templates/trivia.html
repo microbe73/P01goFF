@@ -7,16 +7,35 @@
  -->
 
  <html>
- 	<title>
- 		Do you want to play a game?
- 	</title>
+    <head>
+        <meta charset="utf-8" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link href="/css/stylesheet" type="text/css" rel="customStyle">
+        <title> 
+            Do you want to play a game?
+        </title>
+    </head>
+    
  	<body>
        {{question}}
-       <form action="/game" method = "POST"> <!-- same pathway as authenticate() -->
-         Answer: <input type="text" name="answer"> <br>
-        <input type="submit" name="sub1"> <!-- used for response page to load -->
-        <br><br>
-      </form>
+
+        <form action="/game" method="POST">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="choice" id="flexRadioDefault1" value="true">
+                <label class="form-check-label" for="flexRadioDefault1">
+                    True
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="choice" id="flexRadioDefault2" value = "false">
+                <label class="form-check-label" for="flexRadioDefault2">
+                    False
+                </label>
+            </div>
+            <input type="submit" name="sub1"> <!-- used for response page to load -->
+        </form>
+
        <br>
        <br>
        {{msg}}
