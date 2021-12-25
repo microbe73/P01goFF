@@ -58,3 +58,6 @@ Jazzing out the game.
 
 MichelleL -- 2021-12-23 22:38
 Added genius API functions and initialized key folder.
+
+MichelleL -- 2021-12-25 01:39
+Fixed bug with genius api that prevented new songs to be generated after an 404 error.

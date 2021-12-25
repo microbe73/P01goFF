@@ -1,5 +1,5 @@
 from urllib.request import Request, urlopen, HTTPError, URLError
-import json, urllib, requests, random, os.path
+import json, urllib, requests, random, os.path, pdb
 
 url = "https://api.genius.com"
 path = os.path.dirname(__file__) + '/../keys/key_api0.txt'
@@ -15,13 +15,13 @@ headers = {
 def get_song():
     id = random.randint(100000,999999) #all genius songs can be accessed by their 6 digit ids
     URL = url + "/songs/" + str(id)
-    print(URL)
+    #print("request URL: " + URL)
     req = Request(URL, headers=headers)
     try:
         page = urlopen(req)
     except HTTPError as e:
-        print("error status: " + str(e.code)) #bug here! fix (returns nonetype for song)
-        get_song() #if the song/url does not exist, try again
+        print("error status: " + str(e.code))
+        return get_song() #if the song/url does not exist, try again
     except URLError as e:
         print("error: " + e.reason)
     else:
@@ -29,10 +29,8 @@ def get_song():
         info = dict.get("response").get("song")
         song_name = info.get("full_title")
         song_url = info.get("url")
-        print("song url: " + song_url)
-        return str(song_name)
-
-
+        #print("song url: " + song_url)
+        return (song_name)
 
 if __name__ == "__main__":
-    print("song name: " + str(get_song()))
+    print("song name: " + (get_song()))
