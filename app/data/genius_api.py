@@ -12,7 +12,7 @@ headers = {
     "Authorization": "Bearer " + auth_token
 }
 
-def get_song():
+def get_songinfo():
     id = random.randint(100000,999999) #all genius songs can be accessed by their 6 digit ids
     URL = url + "/songs/" + str(id)
     #print("request URL: " + URL)
@@ -21,16 +21,18 @@ def get_song():
         page = urlopen(req)
     except HTTPError as e:
         print("error status: " + str(e.code))
-        return get_song() #if the song/url does not exist, try again
+        return get_songinfo() #if the song/url does not exist, try again
     except URLError as e:
         print("error: " + e.reason)
     else:
         dict = json.loads(page.read())
         info = dict.get("response").get("song")
-        song_name = info.get("full_title")
-        song_url = info.get("url")
-        #print("song url: " + song_url)
-        return (song_name)
+        return info
 
 if __name__ == "__main__":
-    print("song name: " + (get_song()))
+    print("song info: " + (get_songinfo()))
+    song_name = info.get("full_title")
+    song_url = info.get("url")
+    img = info.get("song_art_image_thumbnail_url")
+    print("image: " + img)
+    print("song url: " + song_url)

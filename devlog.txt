@@ -61,3 +61,6 @@ Added genius API functions and initialized key folder.
 
 MichelleL -- 2021-12-25 01:39
 Fixed bug with genius api that prevented new songs to be generated after an 404 error.
+
+MichelleL -- 2021-12-25 03:37
+Added changes to profile.py that will allow new profiles to randomly generate their own fav song. Change appears on template page.

@@ -209,7 +209,7 @@ def profile():
         "name" : char1.get_fullname(),
         "age": char1.get_age(),
         "pfp": char1.get_picture(),
-        "song":{"genre":"rock", "name":"livin on a prayer"},
+        "song":{"genre":"rock", "name": char1.get_song(), "url": char1.get_songURL()},
         "likes":["food","games","chips"],
         "dislikes":["nofood","nogames","nochips"]
     }
