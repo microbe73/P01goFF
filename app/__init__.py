@@ -218,16 +218,18 @@ def profile():
     return render_template("profile.html", character=character)
 @app.route("/game", methods = ['GET', 'POST'])
 def game():
-    question = "True or false: Does 1+1=2?"
-    correct = "True" #true if the correct answer is true, false if the correct answer is false
+    answer = None
+    info = getTrivHuman("film")[0]
+    question = info["question"]
+    correct = info["correct_answer"] #true if the correct answer is true, false if the correct answer is false
     answer = request.form.get("choice")
-    print (request.form.get("choice"))
+    print("correct: "+correct)
     if(answer == None):
         return render_template("trivia.html", question=question, msg = "")
-    if(answer == "true"):
-        return render_template("trivia.html", question=question, msg="correct!")
+    elif(answer == correct):
+        return render_template("result.html", question=question, msg="correct!")
     else:
-        return render_template("trivia.html", question=question, msg="incorrect")
+        return render_template("result.html", question=question, msg="incorrect")
 
 if __name__ == "__main__":
     main()
