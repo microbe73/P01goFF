@@ -1,7 +1,7 @@
 #A library of helper functions for extracting data from APIs
 
 from urllib.request import Request, urlopen
-import json, urllib
+import json, urllib, random
 
 def parseURL(url):
     ''' parseURL() will open, read, and turn the given url into a dictionary '''
@@ -20,17 +20,6 @@ def get_animedata():
     data = parseURL(url) #will contain anime, character, and quote
     # print(quote + "- " + character + " from " + anime)
     return data
-
-# #throwaway method?
-# def get_animequote():
-#     ''' get_animequote() will generate a random animequote without anime or character info '''
-#     url = "https://animechan.vercel.app/api/random"
-#     data = parseURL(url)
-#     quote = data.get('quote')
-#     character = data.get('character')
-#     anime = data.get('anime')
-#     # print(quote + "- " + character + " from " + anime)
-#     return quote
 
 # functions related to the kanye.rest api
 def get_kanyequote():
@@ -79,3 +68,26 @@ def get_age(seed):
     info = data.get('results')[0]
     age = info.get('dob').get('age')
     return age
+
+def get_categories(count):
+    categories = [
+        "general",
+        "film",
+        "music",
+        "tv",
+        "games",
+        "science",
+        "tech",
+        "math",
+        "myths",
+        "sports",
+        "geography",
+        "history",
+        "politics",
+        "animals",
+        "vehicles",
+        "anime"
+    ]
+    final = random.sample(categories, count)
+    print(final)
+    return final

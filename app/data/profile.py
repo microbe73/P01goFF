@@ -49,3 +49,7 @@ class Profile :
     def get_songURL(self):
         song_url = self.songinfo.get("url")
         return song_url
+
+    def get_interests(self, count):
+        interests = get_categories(count)
+        return interests

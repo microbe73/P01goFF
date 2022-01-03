@@ -205,13 +205,14 @@ def main():
 @app.route("/template_test", methods = ['GET','POST'])
 def profile():
     char1 = Profile()
+    interests = char1.get_interests(6)
     character = {
         "name" : char1.get_fullname(),
         "age": char1.get_age(),
         "pfp": char1.get_picture(),
         "song":{"genre":"rock", "name": char1.get_song(), "url": char1.get_songURL()},
-        "likes":["food","games","chips"],
-        "dislikes":["nofood","nogames","nochips"]
+        "likes":interests[0:3],
+        "dislikes":interests[3:6]
     }
 
     return render_template("profile.html", character=character)
