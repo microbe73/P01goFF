@@ -1,5 +1,5 @@
 from urllib.request import Request, urlopen, HTTPError, URLError
-import json, urllib, requests, random, os.path, pdb
+import json, urllib, random, os.path, pdb
 
 url = "https://api.genius.com"
 path = os.path.dirname(__file__) + '/../keys/key_api0.txt'

@@ -3,7 +3,7 @@ from flask import request, render_template, Flask, redirect
 from os import urandom
 from data.data_functions_v2 import *
 from data.profile import Profile
-
+from data.trivia_api import *
 app = Flask(__name__)
 debug = True
 app.secret_key = urandom(24)
@@ -222,9 +222,12 @@ def game():
     info = getTrivHuman("film")[0]
     question = info["question"]
     correct = info["correct_answer"] #true if the correct answer is true, false if the correct answer is false
-    answer = request.form.get("choice")
+    print("question: "+ question)
     print("correct: "+correct)
+    answer = request.form.get("choice")
     if(answer == None):
+        question = info["question"]
+        correct = info["correct_answer"] #true if the correct answer is true, false if the correct answer is false
         return render_template("trivia.html", question=question, msg = "")
     elif(answer == correct):
         return render_template("result.html", question=question, msg="correct!")
