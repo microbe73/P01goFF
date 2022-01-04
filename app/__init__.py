@@ -4,6 +4,7 @@ from os import urandom
 from data.data_functions_v2 import *
 from data.profile import Profile
 from data.trivia_api import *
+from random import randint
 app = Flask(__name__)
 debug = True
 app.secret_key = urandom(24)
@@ -206,7 +207,7 @@ def main():
 def profile():
     char1 = Profile()
     interests = char1.get_interests(6)
-    character = {
+    session["character"] = {
         "name" : char1.get_fullname(),
         "age": char1.get_age(),
         "pfp": char1.get_picture(),
@@ -215,23 +216,24 @@ def profile():
         "dislikes":interests[3:6]
     }
 
-    return render_template("profile.html", character=character)
+    return render_template("profile.html", character=session["character"])
 @app.route("/game", methods = ['GET', 'POST'])
 def game():
     answer = None
     if(request.method != "POST"):
-        info = getTrivHuman("film")[0]
+        i = randint(0,2)
+        info = getTrivHuman(session["character"]["likes"][i])[0]
         session["question"] = info["question"]
         session["correct"] = info["correct_answer"] 
     print("question: "+ session["question"])
     print("correct: "+ session["correct"])
     answer = request.form.get("choice")
     if(answer == None):
-        return render_template("trivia.html", question=session["question"], msg = "")
+        return render_template("trivia.html", question=session["question"], msg = "", character=session["character"])
     if(answer == session["correct"]):
-        return render_template("result.html", msg="correct!")
+        return render_template("result.html", msg="correct!", character=session["character"])
     else:
-        return render_template("result.html", msg="incorrect")
+        return render_template("result.html", msg="incorrect", character=session["character"])
 
 
 if __name__ == "__main__":

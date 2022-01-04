@@ -18,8 +18,13 @@
     </head>
     
  	<body>
+        <div>
+            <img src = "{{character.pfp}}" alt="Fish" class = "img-thumbnail" style="width: 200px; height: 200px; object-fit: cover; object-position: 10%;">
+            <h2> {{character.name}}'s trivia. Do you know about the things I like? </h2>
+        </div>
+        <div>
        {{question}}
-
+        </div>
         <form action="/game" method="POST">
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="choice" id="flexRadioDefault1" value="True">
