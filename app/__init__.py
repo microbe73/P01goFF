@@ -5,6 +5,7 @@ from data.data_functions_v2 import *
 from data.profile import Profile
 from data.trivia_api import *
 from random import randint
+import html
 app = Flask(__name__)
 debug = True
 app.secret_key = urandom(24)
@@ -223,8 +224,8 @@ def game():
     if(request.method != "POST"):
         i = randint(0,2)
         info = getTrivHuman(session["character"]["likes"][i])[0]
-        session["question"] = info["question"]
-        session["correct"] = info["correct_answer"] 
+        session["question"] = html.unescape(info["question"])
+        session["correct"] = info["correct_answer"]
     print("question: "+ session["question"])
     print("correct: "+ session["correct"])
     answer = request.form.get("choice")

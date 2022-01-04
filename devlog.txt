@@ -67,3 +67,6 @@ Added changes to profile.py that will allow new profiles to randomly generate th
 
 MichelleL -- 2021-01-03 03:30
 Added method for user to randomly generate interests (and non interests) using the different categories for the trivia
+
+MichelleL -- 2021-01-03 22:45
+Trivia API - Decoded strings from the trivia API.
