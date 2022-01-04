@@ -41,10 +41,10 @@ def profile_exists(name):
     "returns true if profile with name exists"
     return profiles.value_exists(name)
 
-def add_profile(name, pfp, age, bio, song, quote, gender):
+def add_profile(name, user, pfp, age, bio, song, gender, friendship): #user refers to the account to which the profile is friended
     "adds a profile 'name' with desired parameters; throws error if conflicts with existing profile"
     if(not profile_exists(name)):
-        profiles.add_values([name, pfp, age, bio, song, quote, gender])
+        profiles.add_values([name, user, pfp, age, bio, song, quote, gender, friendship])
         return True
     return False
 
@@ -54,7 +54,12 @@ def get_profile_value(name, field):
         raise KeyError("the given profile cannot be found")
     else:
         return profiles.get_value(name,field)
-
+def set_profile_value(name, field, value):
+    "Updates a value in the profile table"
+    if(not profile_exists(name)):
+        raise KeyError("The given profile cannot be found")
+    else:
+        profiles.set_value(name, field, value)
 def reset_data():
     "resets the database to empty user and story tables"
     open("data.db", "w").close()

@@ -220,7 +220,8 @@ def profile():
         "quote": quote,
         "song":{"name": char1.get_song(), "url": char1.get_songURL()},
         "likes":interests[0:3],
-        "dislikes":interests[3:6]
+        "dislikes":interests[3:6],
+        "friendship":0
     }
 
     return render_template("profile.html", character=session["character"])
@@ -238,8 +239,12 @@ def game():
     if(answer == None):
         return render_template("trivia.html", question=session["question"], msg = "", character=session["character"])
     if(answer == session["correct"]):
+        session["character"]["friendship"] = session["character"]["friendship"] + 10
+        print(session["character"]["friendship"])
         return render_template("result.html", msg="correct!", character=session["character"])
     else:
+        session["character"]["friendship"] = session["character"]["friendship"] - 10
+        print(session["character"]["friendship"])
         return render_template("result.html", msg="incorrect", character=session["character"])
 
 
