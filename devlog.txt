@@ -65,11 +65,14 @@ Fixed bug with genius api that prevented new songs to be generated after an 404 
 MichelleL -- 2021-12-25 03:37
 Added changes to profile.py that will allow new profiles to randomly generate their own fav song. Change appears on template page.
 
-MichelleL -- 2021-01-03 03:30
+MichelleL -- 2022-01-03 03:30
 Added method for user to randomly generate interests (and non interests) using the different categories for the trivia
 
-MichelleL -- 2021-01-03 22:45
+MichelleL -- 2022-01-03 22:45
 Trivia API - Decoded strings from the trivia API.
 
-MichelleL -- 2021-01-03 23:21
+MichelleL -- 2022-01-03 23:21
 Updated profile html to include quotes.
+
+AngelaZ -- 2022-01-04 01:51
+Updated basic CSS on all templates.
