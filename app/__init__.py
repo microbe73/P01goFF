@@ -208,11 +208,17 @@ def main():
 def profile():
     char1 = Profile()
     interests = char1.get_interests(6)
+    i = randint(0,1)
+    if (i == 1):
+        quote = char1.get_animequote()
+    else:
+        quote = char1.get_kanyequote()
     session["character"] = {
         "name" : char1.get_fullname(),
         "age": char1.get_age(),
         "pfp": char1.get_picture(),
-        "song":{"genre":"rock", "name": char1.get_song(), "url": char1.get_songURL()},
+        "quote": quote,
+        "song":{"name": char1.get_song(), "url": char1.get_songURL()},
         "likes":interests[0:3],
         "dislikes":interests[3:6]
     }

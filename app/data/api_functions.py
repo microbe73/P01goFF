@@ -18,7 +18,6 @@ def get_animedata():
     ''' get_animedata() will generate a random piece of data with an anime quote, the anime it came from, and the character who said it '''
     url = "https://animechan.vercel.app/api/random"
     data = parseURL(url) #will contain anime, character, and quote
-    # print(quote + "- " + character + " from " + anime)
     return data
 
 # functions related to the kanye.rest api
@@ -27,7 +26,6 @@ def get_kanyequote():
     url = "https://api.kanye.rest/"
     data = parseURL(url)
     quote = data.get('quote')
-    # print(quote + " - Kanye")
     return quote
 
 #functions related to the Random User Generator API
@@ -70,6 +68,7 @@ def get_age(seed):
     return age
 
 def get_categories(count):
+    ''' get_categories() will generate random interests for each profile. They correlate to the categories from the trivia api '''
     categories = [
         "general",
         "film",

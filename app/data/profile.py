@@ -17,11 +17,13 @@ class Profile :
         return get_fullname(self.profileURL)
 
     def get_kanyequote(self):
-        return self.kanye
+        return "\"" + self.kanye + "\" - Kanye"
 
     def get_animequote(self):
         quote = self.animedata.get('quote')
-        return quote
+        character = self.animedata.get('character')
+        anime = self.animedata.get('anime')
+        return "\"" + quote + "\" - " + character +  " from " + anime
 
     def get_animechar(self):
         character = self.animedata.get('character')

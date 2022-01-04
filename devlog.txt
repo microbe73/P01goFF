@@ -70,3 +70,6 @@ Added method for user to randomly generate interests (and non interests) using t
 
 MichelleL -- 2021-01-03 22:45
 Trivia API - Decoded strings from the trivia API.
+
+MichelleL -- 2021-01-03 23:21
+Updated profile html to include quotes.
