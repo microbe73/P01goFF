@@ -75,4 +75,4 @@ MichelleL -- 2022-01-03 23:21
 Updated profile html to include quotes.
 
 AngelaZ -- 2022-01-04 01:51
-Updated basic CSS on all templates.
+Updated basic CSS on all templates and added a navigation bar to index.html.
