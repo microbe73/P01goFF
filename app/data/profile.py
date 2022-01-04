@@ -53,3 +53,5 @@ class Profile :
     def get_interests(self, count):
         interests = get_categories(count)
         return interests
+    def get_friendship(self):
+        return self.friendship
