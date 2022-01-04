@@ -2,7 +2,7 @@
 # This allows for specific profiles to be referenced which will return the same attributes every time it's called
 from data.api_functions import *
 from data.genius_api import *
-
+from data.data_functions_v2 import *
 class Profile :
     def __init__(self):
         self.profileURL = get_profileURL()
@@ -54,4 +54,10 @@ class Profile :
         interests = get_categories(count)
         return interests
     def get_friendship(self):
-        return self.friendship
+        return get_profile_value(get_fullname(self), friendship) #not sure if correct
+    def set_friendship(self, value):
+        try:
+            set_profile_value(get_fullname(self), friendship, value) #not sure of this one either
+            return True
+        except:
+            return False
