@@ -204,7 +204,7 @@ def main():
     except:
         return render_template('ErrorResponse.html')
 
-@app.route("/template_test", methods = ['GET','POST'])
+@app.route("/friend/random", methods = ['GET','POST'])
 def profile():
     char1 = Profile()
     interests = char1.get_interests(6)
