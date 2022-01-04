@@ -219,20 +219,20 @@ def profile():
 @app.route("/game", methods = ['GET', 'POST'])
 def game():
     answer = None
-    info = getTrivHuman("film")[0]
-    question = info["question"]
-    correct = info["correct_answer"] #true if the correct answer is true, false if the correct answer is false
-    print("question: "+ question)
-    print("correct: "+correct)
+    if(request.method != "POST"):
+        info = getTrivHuman("film")[0]
+        session["question"] = info["question"]
+        session["correct"] = info["correct_answer"] 
+    print("question: "+ session["question"])
+    print("correct: "+ session["correct"])
     answer = request.form.get("choice")
     if(answer == None):
-        question = info["question"]
-        correct = info["correct_answer"] #true if the correct answer is true, false if the correct answer is false
-        return render_template("trivia.html", question=question, msg = "")
-    elif(answer == correct):
-        return render_template("result.html", question=question, msg="correct!")
+        return render_template("trivia.html", question=session["question"], msg = "")
+    if(answer == session["correct"]):
+        return render_template("result.html", msg="correct!")
     else:
-        return render_template("result.html", question=question, msg="incorrect")
+        return render_template("result.html", msg="incorrect")
+
 
 if __name__ == "__main__":
     main()
