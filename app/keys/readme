@@ -1,0 +1,6 @@
+List of APIs used:
+- kanye.rest: for collecting kanye quotes.
+- Genius: for collecting song data.
+- Random User Generator: for collecting randomly generated user information.
+- animequote: for collecting random animequotes.
+- OpenTriviaDB: for collecting random trivia questions.
