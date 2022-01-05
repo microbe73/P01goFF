@@ -53,6 +53,9 @@ Started working on API functions
 IshraqM -- 2021-12-21 8:41
 Finished work on API functions and implemented error handling for API use.
 
+RayatR -- 2021-12-22 8:41
+Completed and added trivia game skeleton (hard-coded question, no API implementation)
+
 IshraqM -- 2021-12-23 8:41
 Jazzing out the game.
 
