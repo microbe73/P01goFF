@@ -54,12 +54,14 @@ def get_profile_value(name, field):
         raise KeyError("the given profile cannot be found")
     else:
         return profiles.get_value(name,field)
+
 def set_profile_value(name, field, value):
     "Updates a value in the profile table"
     if(not profile_exists(name)):
         raise KeyError("The given profile cannot be found")
     else:
         profiles.set_value(name, field, value)
+        
 def reset_data():
     "resets the database to empty user and story tables"
     open("data.db", "w").close()
