@@ -184,15 +184,15 @@ def authenticate():
 @app.route("/dashboard", methods=['GET', 'POST'])
 # TESTER CODE. FINAL PRODUCT MAY VARY DUE TO PRODUCT ENHANCEMENT.
 def dashboard():
-    p1 = Profile()
-    print("seed: " + p1.get_profileURL())
-    print("full name: " + p1.get_fullname())
-    print("picture: " + p1.get_picture())
-    print("age: " + str(p1.get_age()))
-    print("kanye quote: " + p1.get_kanyequote())
-    print("anime quote: " + p1.get_animequote())
-    print("char for quote: " + p1.get_animechar())
-    print("anime for quote: " + p1.get_anime())
+    # p1 = Profile()
+    # print("seed: " + p1.get_profileURL())
+    # print("full name: " + p1.get_fullname())
+    # print("picture: " + p1.get_picture())
+    # print("age: " + str(p1.get_age()))
+    # print("kanye quote: " + p1.get_kanyequote())
+    # print("anime quote: " + p1.get_animequote())
+    # print("char for quote: " + p1.get_animechar())
+    # print("anime for quote: " + p1.get_anime())
     return render_template('index.html') #switch out
 
 def main():
