@@ -232,6 +232,17 @@ def profile():
     }
 
     return render_template("profile.html", character=session["character"])
+
+@app.route("/save", methods = ['GET', 'POST'])
+def save():
+    try:
+        if(session["character"] != None):
+            add_profile(session["character"]["name"], session["username"], session["character"]["pfp"], session["character"]["age"], session["character"]["song"]["name"], session["character"]["quote"], session["character"]["gender"], session["character"]["likes"][0], session["character"]["likes"][1], session["character"]["likes"][2], session["character"]["dislikes"][0], session["character"]["dislikes"][1], session["character"]["dislikes"][2], session["character"]["friendship"])
+            session["character"] = None
+            return redirect("/")
+    except:
+        print("save failed")
+        return redirect("/")
 @app.route("/game", methods = ['GET', 'POST'])
 def game():
     answer = None
