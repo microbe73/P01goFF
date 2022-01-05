@@ -236,12 +236,18 @@ def profile():
 
 @app.route("/save", methods = ['GET', 'POST'])
 def save():
+    try:
         if(session["character"] != None):
             add_profile(session["character"]["name"], session["username"], session["character"]["pfp"], session["character"]["age"], session["character"]["song"]["url"], session["character"]["song"]["name"], session["character"]["quote"], session["character"]["likes"][0], session["character"]["likes"][1], session["character"]["likes"][2], session["character"]["dislikes"][0], session["character"]["dislikes"][1], session["character"]["dislikes"][2], session["character"]["friendship"])
             #(              name,                       user,                   pfp, age, songURL, songName, quote, like1, like2, like3, dislike1, dislike2, dislike3, friendship):
             session["character"] = None
             return redirect("/")
-
+    except:
+        return redirect("/")
+@app.route("/unfriend", methods = ['GET', 'POST'])
+def no_save():
+        session["character"] = None
+        return redirect("/")
 @app.route("/game", methods = ['GET', 'POST'])
 def game():
     answer = None
