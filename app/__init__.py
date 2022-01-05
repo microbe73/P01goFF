@@ -265,6 +265,7 @@ def save():
         return redirect("/")
 @app.route("/unfriend", methods = ['GET', 'POST'])
 def no_save():
+        remove_profile(session["character"]["name"])
         session["character"] = None
         return redirect("/")
 @app.route("/game", methods = ['GET', 'POST'])

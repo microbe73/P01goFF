@@ -68,6 +68,12 @@ def get_profiles_of_user(username):
         if(get_profile_value(i, "user") == username):
             profs_of_user.append(i)
     return profs_of_user
+def remove_profile(name):
+    try:
+        profiles.delete_value("name",name)
+        return True
+    except:
+        return False
 
 def reset_data():
     "resets the database to empty user and profile tables"

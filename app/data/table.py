@@ -41,6 +41,12 @@ class Table:
         value_lists = self.c.fetchall()
         return map(first, value_lists)
 
+    def delete_value(self,field, value):
+        "deletes row from table"
+        self.c.execute(
+            f"DELETE FROM {self.table_name} WHERE {field} = '{value}'"
+        )
+
     def get_value_list(self, search, field):
         self.c.execute(
             f"SELECT {field} FROM {self.table_name} WHERE {self.search_field} = ?", [search])
