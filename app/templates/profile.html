@@ -30,6 +30,12 @@
         a{
           font-family: courier; padding: 10px; font-style: italic; margin-bottom: -10px;
         }
+        div.nicebutton{
+          background-color: lightblue; border-style: dotted; border-radius: 30px; border-color: #4f81c7;
+        }
+        div.coolbutton{
+          background-color: #b8d3e0; border-style: ridge; border-radius: 30px; border-color: #69abca; text-align: center;
+        }
           
       </style>
 
@@ -47,9 +53,10 @@
 
     <div class="body">
         <body>
-            <div class="p-5 bg-secondary text-white">
+            <div class="p-3 bg-secondary text-white">
                 <h1>
                     {{character.name}}'s Profile
+                    <br> <br>
                 </h1>
             </div>
 
@@ -97,21 +104,28 @@
                 </div>
 
             </div>
-            <div>
-                <form action="/game">
-                    <input type="submit" value="trivia" />
-                </form>
+            
+            <br>
+            <form>
+            <div class = "row">
+                <div class = "col-sm-4">
+                  <div class = "p-3 text-white nicebutton">
+                    <button class="btn btn-block" type="submit" formaction="/game"> Proceed to Trivia!</button>
+                  </div>
+                </div>
+                <div class = "col-sm-4">
+                  <div class = "p-3 text-white nicebutton">
+                    <button class="btn btn-block" type="submit" formaction="/save"> Befriend!</button>
+                  </div>
+                </div>
+                <div class = "col-sm-4">
+                    <div class = "p-3 text-white nicebutton">
+                      <button class="btn btn-block" type="submit" formaction="/unfriend"> Unfriend!</button>
+                    </div>
+                </div>
             </div>
-            <div>
-                <form action="/save">
-                    <input type="submit" value="Befriend" />
-                </form>
-            </div>
-            <div>
-                <form action="/unfriend">
-                    <input type="submit" value="Unfriend" />
-                </form>
-            </div>
+            <br>
+            </form>
         </body>
     </div>
 

@@ -28,8 +28,18 @@
       font-family: courier; font-size: 160%;
     }
     h3{
-          font-family: courier;
-      }
+      font-family: courier;
+    }
+    a{
+      font-family: courier; padding: 10px; font-style: italic; margin-bottom: -10px;
+    }
+    div.nicebutton{
+      background-color: lightblue; border-style: dotted; border-radius: 30px; border-color: #4f81c7;
+    }
+    div.coolbutton{
+      background-color: #b8d3e0; border-style: ridge; border-radius: 30px; border-color: #69abca; text-align: center;
+    }
+      
   </style>
   
   <div class="body">
@@ -45,12 +55,22 @@
         <h3 style="color:red;">
           {{error}} <!-- If there is no error (initial start and logging out), this is empty --> <br>
         </h3>
+
+
         <form action="/login" method = "POST"> <!-- same pathway as authenticate() -->
           Username: <input type="text" name="username"> <br>
           Password: <input type="password" name="password"> <br> <br>
-          <input type="submit" name="sub1"> <!-- used for response page to load -->
-          <br><br>
-          <input formaction = "/register" type="submit" value="Register">
+          <div class = "col-sm-2">
+            <div class = "p-1 text-white nicebutton">
+              <button class="btn btn-block" type="submit" name="sub1">Submit</button>
+            </div>
+          </div>
+          <br>
+          <div class = "col-sm-2">
+            <div class = "p-1 text-white nicebutton">
+              <button class="btn btn-block" type="submit" formaction = "/register">Register Instead</button>
+            </div>
+          </div>
         </form>
         <br>
       </center>

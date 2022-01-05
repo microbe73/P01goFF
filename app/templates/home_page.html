@@ -35,8 +35,14 @@
         a{
           font-family: courier; padding: 10px; font-style: italic; margin-bottom: -10px;
         }
+        div.nicebutton{
+          background-color: lightblue; border-style: dotted; border-radius: 30px; border-color: #4f81c7;
+        }
+        div.coolbutton{
+          background-color: #b8d3e0; border-style: ridge; border-radius: 30px; border-color: #69abca; text-align: center;
+        }
           
-    </style>
+      </style>
 
     <nav class="navbar navbar-default">
         <div class="container-fluid">
@@ -57,10 +63,6 @@
                 <br>
                 <br>
             </h1>
-
-            <form>
-                <input formaction="/logout" type="submit" value="Logout">
-            </form>
 
             <p>
                 Hello {{user}}! Check <a href="/friend/random">this</a> out!
