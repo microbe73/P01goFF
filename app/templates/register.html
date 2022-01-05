@@ -30,6 +30,16 @@
     h3{
       font-family: courier;
     }
+    a{
+      font-family: courier; padding: 10px; font-style: italic; margin-bottom: -10px;
+    }
+    div.nicebutton{
+      background-color: lightblue; border-style: dotted; border-radius: 30px; border-color: #4f81c7;
+    }
+    div.coolbutton{
+      background-color: #b8d3e0; border-style: ridge; border-radius: 30px; border-color: #69abca; text-align: center;
+    }
+      
   </style>
 
   <div class="body">
@@ -50,10 +60,17 @@
           Password: <input type="password" name="password"> <br> 
           Confirm Password: <input type="password" name="c_password"> 
           <br><br>
-          <input type="submit" name="sub1"> <!-- used for response page to load -->
-          <br><br>
-          <input formaction = "/login" type="submit" value="Login Instead">
-          <br><br>
+          <div class = "col-sm-2">
+            <div class = "p-1 text-white nicebutton">
+              <button class="btn btn-block" type="submit" name="sub1">Submit</button>
+            </div>
+          </div>
+          <br>
+          <div class = "col-sm-2">
+            <div class = "p-1 text-white nicebutton">
+              <button class="btn btn-block" type="submit" formaction = "/login">Login Instead</button>
+            </div>
+          </div>
         </form>
       </center>
     </body>
