@@ -84,7 +84,10 @@ MichelleL -- 2022-01-03 23:21
 Updated profile html to include quotes.
 
 AngelaZ -- 2022-01-04 01:51
-Updated basic CSS on all templates and added a navigation bar to index.html.
+Updated basic CSS on all templates and added a navigation bar to index.html that allows you to sign up or log in.
 
 RayatR -- 2022-01-04 23:00
-Added the ability to friend or not friend profiles, new profiles are generated only if previous profiles is saved or discarded already
+Added the ability to friend or not friend profiles, new profiles are generated only if previous profiles is saved or discarded already.
+
+AngelaZ -- 2022-01-05 00:13
+Complete and working navigation bar at the top that allows you to log out or go to home_page.html from profile.html, and etc.
