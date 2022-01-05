@@ -203,7 +203,14 @@ def main():
         app.run()
     except:
         return render_template('ErrorResponse.html')
-
+@app.route("/friend", methods = ['GET','POST'])
+def loaded_profile():
+    try:
+        if(session["character"] != None):
+            return render_template("profile.html", character=session["character"])
+    except:
+        return redirect("/friend/random")
+        
 @app.route("/friend/random", methods = ['GET','POST'])
 def profile():
     char1 = Profile()
