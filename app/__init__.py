@@ -203,7 +203,14 @@ def main():
         app.run()
     except:
         return render_template('ErrorResponse.html')
-
+@app.route("/friend", methods = ['GET','POST'])
+def loaded_profile():
+    try:
+        if(session["character"] != None):
+            return render_template("profile.html", character=session["character"])
+    except:
+        return redirect("/friend/random")
+        
 @app.route("/friend/random", methods = ['GET','POST'])
 def profile():
     char1 = Profile()
@@ -225,6 +232,15 @@ def profile():
     }
 
     return render_template("profile.html", character=session["character"])
+
+@app.route("/save", methods = ['GET', 'POST'])
+def save():
+        if(session["character"] != None):
+            add_profile(session["character"]["name"], session["username"], session["character"]["pfp"], session["character"]["age"], session["character"]["song"]["url"], session["character"]["song"]["name"], session["character"]["quote"], session["character"]["likes"][0], session["character"]["likes"][1], session["character"]["likes"][2], session["character"]["dislikes"][0], session["character"]["dislikes"][1], session["character"]["dislikes"][2], session["character"]["friendship"])
+            #(              name,                       user,                   pfp, age, songURL, songName, quote, like1, like2, like3, dislike1, dislike2, dislike3, friendship):
+            session["character"] = None
+            return redirect("/")
+
 @app.route("/game", methods = ['GET', 'POST'])
 def game():
     answer = None
