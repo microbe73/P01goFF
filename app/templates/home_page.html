@@ -65,7 +65,7 @@
             <p>User's saved profiles</p>
             <ul>
                 {% for item in saved_profiles %}
-                    <li>{{item}}</li>
+                    <li><a href = "/friend/{{item}}">{{item}}</a></li>
                 {% endfor %}
             </ul>
 
