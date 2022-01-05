@@ -41,6 +41,7 @@ def welcome():
     '''
 
     if userSignedIn(session):
+        print(get_profiles_of_user(session["username"]))
         return render_template("home_page.html", user=session['username'])
 
     else:

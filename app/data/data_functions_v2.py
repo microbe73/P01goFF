@@ -61,7 +61,13 @@ def set_profile_value(name, field, value):
         raise KeyError("The given profile cannot be found")
     else:
         profiles.set_value(name, field, value)
-        
+def get_profiles_of_user(username):
+    profs = get_profiles()
+    profs_of_user = []
+    for i in profs:
+        if(get_profile_value(i, "user") == username):
+            profs_of_user.append(i)
+    return profs_of_user
 def reset_data():
     "resets the database to empty user and profile tables"
     open("data.db", "w").close()
