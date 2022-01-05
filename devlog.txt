@@ -100,3 +100,6 @@ Added the ability to friend or not friend profiles, new profiles are generated o
 
 AngelaZ -- 2022-01-05 00:13
 Fixed multiple bugs and completed on making a working navigation bar at the top that allows you to log out or go to home_page.html from profile.html, and etc.
+
+IshraqM -- 2022-01-05 2:30
+Late night grind on making sure everything is working together. Did bug fixing with trivia game and profies information, along with try catch envelopes.
