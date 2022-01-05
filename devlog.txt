@@ -29,6 +29,9 @@ Looking at code and cleaning like a janitor.
 RayatR -- 2021-12-13 19:45
 Adding various database functions, such as returning usernames, adding friends, and getting friends. Improved user login by checking for duplicate names.
 
+AngelaZ -- 2021-12-15 20:12
+Fixed register.html that wasn't working because of missing <form></form>.
+
 MichelleL -- 2021-12-15 21:02
 Added api_functions, which contains functions that will be used when handling our program's APIs. Accounted for kanye and anime quotes, and a bit of random user API.
 
@@ -41,25 +44,28 @@ Fixing up profile template and figuring out db + login jazz
 MichelleL -- 2021-12-16 08:27
 Finished with user generator API.
 
-IshraqM -- 2021-12-16 8:40
-Profile template is functionally and currently up for testing. Database reworked and is currently capable of allowing login and reigster functions to work.
-
-RayatR -- 2021-12-17 8:30
-Updated launch codes for further readability
-
-IshraqM -- 2021-12-17 8:42
+IshraqM -- 2021-12-17 08:30
 Worked on getting profiles table working with db.
 
-IshraqM -- 2021-12-20 8:41
-Started working on API functions
+IshraqM -- 2021-12-16 08:40
+Profile template is functionally and currently up for testing. Database reworked and is currently capable of allowing login and reigster functions to work.
 
-IshraqM -- 2021-12-21 8:41
+RayatR -- 2021-12-17 08:30
+Updated launch codes for further readability
+
+IshraqM -- 2021-12-20 08:41
+Started working on API functions.
+
+IshraqM -- 2021-12-21 08:41
 Finished work on API functions and implemented error handling for API use.
 
-RayatR -- 2021-12-22 8:41
+RayatR -- 2021-12-22 08:41
 Completed and added trivia game skeleton (hard-coded question, no API implementation)
 
-IshraqM -- 2021-12-23 8:41
+AngelaZ -- 2021-12-22
+Headings, more bootstrap, more css, and the continuation of trying to override bootstrap with custom css.
+
+IshraqM -- 2021-12-23 08:41
 Jazzing out the game.
 
 MichelleL -- 2021-12-23 22:38
@@ -70,6 +76,9 @@ Fixed bug with genius api that prevented new songs to be generated after an 404 
 
 MichelleL -- 2021-12-25 03:37
 Added changes to profile.py that will allow new profiles to randomly generate their own fav song. Change appears on template page.
+
+AngelaZ -- 2022-01-02 11:23
+Worked on trying not to use SASS to override bootstrap.
 
 MichelleL -- 2022-01-03 03:30
 Added method for user to randomly generate interests (and non interests) using the different categories for the trivia
@@ -90,4 +99,4 @@ RayatR -- 2022-01-04 23:00
 Added the ability to friend or not friend profiles, new profiles are generated only if previous profiles is saved or discarded already.
 
 AngelaZ -- 2022-01-05 00:13
-Complete and working navigation bar at the top that allows you to log out or go to home_page.html from profile.html, and etc.
+Fixed multiple bugs and completed on making a working navigation bar at the top that allows you to log out or go to home_page.html from profile.html, and etc.
