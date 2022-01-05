@@ -14,6 +14,13 @@ To find friends is hard.
 To communicate harder.
 So rely on us.
 
+## APIs Used
+* [Animechan](https://github.com/stuy-softdev/notes-and-code/blob/main/api_kb/411_on_Animechan.md)
+* [kanye.rest](https://github.com/stuy-softdev/notes-and-code/blob/main/api_kb/411_on_kanye.rest.md)
+* [Genius](https://github.com/stuy-softdev/notes-and-code/blob/main/api_kb/411_on_Genius.md)
+* [Random User Generator](https://github.com/stuy-softdev/notes-and-code/blob/main/api_kb/411_on_RandomUserGenerator.md)
+* [Open Trivia Database](https://github.com/stuy-softdev/notes-and-code/blob/main/api_kb/411_on_OpenTrivia.md)
+
 ## Launch Codes
 Prerequisites:
     Python 3 is installed and necessary environment variables are setup properly.
