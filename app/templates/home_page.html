@@ -61,6 +61,15 @@
             <p>
                 Hello {{user}}! Check <a href="/friend/random">this</a> out!
             </p>
+            <br>
+            <p>User's saved profiles</p>
+            <ul>
+                {% for item in saved_profiles %}
+                    <li>{{item}}</li>
+                {% endfor %}
+            </ul>
+
+
         </body>
     </div>
     

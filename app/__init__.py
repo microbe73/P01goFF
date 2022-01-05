@@ -41,8 +41,9 @@ def welcome():
     '''
 
     if userSignedIn(session):
-        print(get_profiles_of_user(session["username"]))
-        return render_template("home_page.html", user=session['username'])
+        saved_profiles = get_profiles_of_user(session["username"])
+        print(saved_profiles)
+        return render_template("home_page.html", user=session['username'],saved_profiles = saved_profiles)
 
     else:
         #fill in with watever we want later
@@ -212,7 +213,25 @@ def loaded_profile():
     except:
         return redirect("/friend/random")
         
-@app.route("/friend/random", methods = ['GET','POST'])
+@app.route("/friend/<string:name>", methods = ['GET','POST'])
+def saved_profile(name):
+    char1 = {
+        "name" : get_profile_value(name,"name"),
+        "age" : get_profile_value(name,"age"),
+        "pfp": get_profile_value(name, "pfp"),
+        "quote": get_profile_value(name, "quote"),
+        "song": {"name": get_profile_value(name,"songName"), "url": get_profile_value(name,"songURL")},
+        "likes": [get_profile_value(name, "like1"), get_profile_value(name, "like2"), get_profile_value(name, "like3")],
+        "dislikes": [get_profile_value(name, "dislike1"), get_profile_value(name, "dislike2"), get_profile_value(name, "dislike3")],
+        "friendship": get_profile_value(name, "friendship"),
+
+    }
+
+    session["character"] = char1
+
+    return render_template("profile.html", character=session["character"])
+
+@app.route("/friend/random", methods=['GET', 'POST'])
 def profile():
     char1 = Profile()
     interests = char1.get_interests(6)
