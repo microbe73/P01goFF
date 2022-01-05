@@ -44,6 +44,9 @@ Finished with user generator API.
 IshraqM -- 2021-12-16 8:40
 Profile template is functionally and currently up for testing. Database reworked and is currently capable of allowing login and reigster functions to work.
 
+RayatR -- 2021-12-17 8:30
+Updated launch codes for further readability
+
 IshraqM -- 2021-12-17 8:42
 Worked on getting profiles table working with db.
 
@@ -71,6 +74,9 @@ Added changes to profile.py that will allow new profiles to randomly generate th
 MichelleL -- 2022-01-03 03:30
 Added method for user to randomly generate interests (and non interests) using the different categories for the trivia
 
+RayatR -- 2022-01-03 22:30
+Trivia API is now implemented for the game, utilizes user interests to select categories, added friendship levels and functions for them
+
 MichelleL -- 2022-01-03 22:45
 Trivia API - Decoded strings from the trivia API.
 
@@ -79,3 +85,6 @@ Updated profile html to include quotes.
 
 AngelaZ -- 2022-01-04 01:51
 Updated basic CSS on all templates and added a navigation bar to index.html.
+
+RayatR -- 2022-01-04 23:00
+Added the ability to friend or not friend profiles, new profiles are generated only if previous profiles is saved or discarded already
