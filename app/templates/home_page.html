@@ -69,7 +69,7 @@
             <p>User's saved profiles</p>
             <ul>
                 {% for item in saved_profiles %}
-                    <li><a href = "/friend/{{item}}">{{item}}</a></li>
+                    <li><a href = "/friend/{{item[0]}}">{{item[0]}} | Friendship Level: {{item[1]}}</a></li>
                 {% endfor %}
             </ul>
 

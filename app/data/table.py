@@ -34,6 +34,12 @@ class Table:
         self.c.execute(
             f"UPDATE {self.table_name} SET {field} = ? WHERE {self.search_field} = ?", [value, search])
         self.db.commit()
+    
+    def set_value_libre(self, search,search_field, set_field, value):
+        "sets field of a row with a search_field of search to value"
+        self.c.execute(
+            f"UPDATE {self.table_name} SET {set_field} = ? WHERE {search_field} = ?", [value, search])
+        self.db.commit()
 
     def get_main_values(self):
         "returns a list of main fields"

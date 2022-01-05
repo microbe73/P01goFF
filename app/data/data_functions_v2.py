@@ -68,6 +68,16 @@ def get_profiles_of_user(username):
         if(get_profile_value(i, "user") == username):
             profs_of_user.append(i)
     return profs_of_user
+
+def friend_status(username,profile):
+    return profile in get_profiles_of_user(username)
+
+def update_friendship(friendship,profile):
+    profiles.set_value(profile,"friendship",friendship)
+
+def get_friendship(profile):
+    profiles.get_value(profile,"name")
+
 def remove_profile(name):
     try:
         profiles.delete_value("name",name)

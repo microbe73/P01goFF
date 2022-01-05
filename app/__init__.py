@@ -42,8 +42,13 @@ def welcome():
 
     if userSignedIn(session):
         saved_profiles = get_profiles_of_user(session["username"])
+        
+        for profile in range(len(saved_profiles)):
+            saved_profiles[profile] = [saved_profiles[profile],
+                                       get_profile_value(saved_profiles[profile],"friendship")]
+
         print(saved_profiles)
-        return render_template("home_page.html", user=session['username'],saved_profiles = saved_profiles)
+        return render_template("home_page.html", user=session['username'], saved_profiles=saved_profiles)
 
     else:
         #fill in with watever we want later
@@ -280,13 +285,32 @@ def game():
     print("correct: "+ session["correct"])
     answer = request.form.get("choice")
     if(answer == None):
+        print(session["character"])
+
         return render_template("trivia.html", question=session["question"], msg = "", character=session["character"])
     if(answer == session["correct"]):
-        session["character"]["friendship"] = session["character"]["friendship"] + 10
+        x = session["character"]
+        x["friendship"] = int(x["friendship"]) + 10
+        print("Friendship status")
+        print(friend_status(session['username'],
+              session['character']['name']))
+        if friend_status(session['username'],session['character']['name']):
+            update_friendship(
+                x["friendship"], session["character"]["name"])
+        
+        session['character'] = x
         print(session["character"]["friendship"])
         return render_template("result.html", msg="correct!", character=session["character"])
     else:
-        session["character"]["friendship"] = session["character"]["friendship"] - 10
+        x = session["character"]
+        x["friendship"] = int(x["friendship"]) - 10
+        print("Friendship status")
+        print(friend_status(session['username'],
+                            session['character']['name']))
+        if friend_status(session['username'], session['character']['name']):
+            update_friendship(
+                x["friendship"], session["character"]["name"])
+        session['character'] = x
         print(session["character"]["friendship"])
         return render_template("result.html", msg="incorrect", character=session["character"])
 
