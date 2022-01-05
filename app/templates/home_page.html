@@ -65,10 +65,10 @@
             </h1>
 
             <p>
-                Hello {{user}}! Check <a href="/friend/random">this</a> out!
+                Hello {{user}}! Click <a href="/friend/random">here</a> to find friends!
             </p>
             <br>
-            <p>User's saved profiles</p>
+            <p>Saved Friends!:</p>
             <ul>
                 {% for item in saved_profiles %}
                     <li><a href = "/friend/{{item[0]}}">{{item[0]}} | Friendship Level: {{item[1]}}</a></li>
